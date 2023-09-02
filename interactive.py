@@ -86,12 +86,12 @@ class Interactive:
             
 
     def handle_key(self, key):
-        if key == 65361: self.pan('left')
-        elif key == 65362: self.pan('up')
-        elif key == 65363: self.pan('right')
-        elif key == 65364: self.pan('down')
-        elif key == 65365: self.zoom('in')
-        elif key == 65366: self.zoom('out')
+        if key in [65361, 2424832]: self.pan('left')
+        elif key in [65362, 2490368]: self.pan('up')
+        elif key in [65363, 2555904]: self.pan('right')
+        elif key in [65364, 2621440]: self.pan('down')
+        elif key in [65365, 2162688]: self.zoom('in')
+        elif key in [65366, 2228224]: self.zoom('out')
         elif key == 113: self.running = False
         elif key == -1: pass
         else: print(key)
