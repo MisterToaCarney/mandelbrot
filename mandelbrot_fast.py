@@ -5,14 +5,14 @@ import time
 
 plt.rcParams['figure.figsize'] = [10,10]
 
-center = (-0.7492226869, 0.0756571369)
-span = 0.001
+center = [-0.7378718749999998, -0.16438906250000007]
+span = 1/1024
 extent = [center[0] - span, center[0] + span, center[1] - span, center[1] + span]
-resolution = (1000,1000)
-iterations = 4000
+resolution = (4000,4000)
+iterations = 1200
 
-real = np.linspace(extent[0], extent[1], resolution[1], dtype=np.float32)
-imag = (np.linspace(extent[3], extent[2], resolution[0], dtype=np.float32) * 1j)[None,:].T
+real = np.linspace(extent[0], extent[1], resolution[1], dtype=np.float64)
+imag = (np.linspace(extent[3], extent[2], resolution[0], dtype=np.float64) * 1j)[None,:].T
 c = real + imag
 c_flat = c.flatten()
 
@@ -38,6 +38,8 @@ print("Completed", iterations, "iterations in", end-start, "seconds")
 
 image[image == 0] = iterations
 image = np.log(image)
+
+plt.imsave('images/4.png', image, cmap='inferno')
 
 plt.imshow(image, cmap='inferno', extent=extent)
 plt.show()

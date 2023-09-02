@@ -6,9 +6,9 @@ class Interactive:
     def __init__(self):
         self.center = [-0.7492, 0.07565]
         self.span = 1
-        self.resolution = (1500,1500)
+        self.resolution = (1000,1000)
         self.iterations = 4000
-        self.scale_factor = 0.66666
+        self.scale_factor = 1
 
         self.running = True
 
